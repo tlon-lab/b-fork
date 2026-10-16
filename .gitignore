@@ -1,0 +1,25 @@
+__pycache__/
+*.py[cod]
+*.tmp
+.DS_Store
+.venv/
+
+node_modules/
+dist/
+.env
+.env.*
+*.pmtiles
+data/raw/
+
+# --- Arnés de desarrollo (local, no se publica) ---
+.claude/
+AGENTS.md
+CLAUDE.md
+CHECKPOINTS.md
+init.sh
+feature_list.json
+features/
+progress/
+docs/
+tools/
+project-spec.md
