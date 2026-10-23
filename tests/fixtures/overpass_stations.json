@@ -1,0 +1,28 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API (fixture armada a mano)",
+  "osm3s": {"timestamp_osm_base": "2026-10-01T00:00:00Z"},
+  "elements": [
+    {"type": "node", "id": 101, "lat": 6.2300, "lon": -75.5900,
+     "tags": {"railway": "station", "name": "Acevedo", "network": "Metro de Medellín",
+              "operator": "Metro de Medellín", "ref": "A12"}},
+    {"type": "node", "id": 102, "lat": 6.2950, "lon": -75.5430,
+     "tags": {"aerialway": "station", "name": "Santo Domingo", "network": "Metrocable"}},
+    {"type": "node", "id": 103, "lat": 6.3120, "lon": -75.6890,
+     "tags": {"aerialway": "station", "name": "Palmitas",
+              "network": "Teleferico de Palmitas"}},
+    {"type": "node", "id": 104, "lat": 6.2530, "lon": -75.5560,
+     "tags": {"railway": "tram_stop", "name": "San Antonio"}},
+    {"type": "relation", "id": 105, "center": {"lat": 6.2440, "lon": -75.5600},
+     "tags": {"railway": "tram_stop", "public_transport": "station", "name": "Miraflores"}},
+    {"type": "node", "id": 106, "lat": 6.2090, "lon": -75.5680,
+     "tags": {"amenity": "bicycle_rental", "operator": "EnCicla", "name": "Parque Lleras",
+              "capacity": "20"}},
+    {"type": "node", "id": 107, "lat": 6.2700, "lon": -75.5700,
+     "tags": {"railway": "station"}},
+    {"type": "way", "id": 108, "tags": {"railway": "station", "name": "Sin geometria"}},
+    {"type": "node", "id": 109, "lat": 6.2100, "lon": -75.5750,
+     "tags": {"amenity": "bicycle_rental", "name": "Alquiler Privado",
+              "operator": "Bicis Privadas"}}
+  ]
+}

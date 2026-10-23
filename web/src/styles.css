@@ -1,0 +1,73 @@
+:root {
+  color-scheme: dark;
+  --bg: #0f1720;
+  --panel: #0f1720dd;
+  --fg: #e8eef4;
+  --muted: #8fa3b5;
+  --line: #2c3a49;
+  --accent: #ff8a3d;
+  --on-accent: #1a0e05;
+}
+:root[data-theme="light"] {
+  color-scheme: light;
+  --bg: #f2ece0;
+  --panel: #fbf7ee;
+  --fg: #2a2f36;
+  --muted: #7a7466;
+  --line: #d6cdb9;
+  --accent: #e56a2e;
+  --on-accent: #ffffff;
+}
+* { box-sizing: border-box; }
+html, body, #root { height: 100%; margin: 0; background: var(--bg); color: var(--fg);
+  font: 14px/1.4 system-ui, sans-serif; }
+.app { position: relative; height: 100%; overflow: hidden; }
+.map { position: absolute; inset: 0; }
+
+.bar { position: absolute; top: calc(env(safe-area-inset-top) + 10px); left: 16px; display: flex;
+  gap: 10px; align-items: center; background: var(--panel); padding: 6px 8px 6px 12px;
+  border-radius: 999px; backdrop-filter: blur(6px); }
+.tag { color: var(--muted); font-size: 12px; }
+.icon { width: 32px; height: 32px; border-radius: 50%; border: 1px solid var(--line);
+  background: transparent; color: var(--fg); font-size: 16px; cursor: pointer; }
+
+.levels { position: absolute; top: calc(env(safe-area-inset-top) + 10px); right: 16px; display: flex;
+  background: var(--panel); border-radius: 999px; padding: 3px; gap: 2px; }
+.levels button { min-height: 32px; padding: 0 14px; border-radius: 999px; border: 0;
+  background: transparent; color: var(--muted); font: inherit; cursor: pointer; }
+.levels button.on { background: var(--accent); color: var(--on-accent); font-weight: 600; }
+
+.controls { position: absolute; left: 16px; right: 16px; bottom: calc(env(safe-area-inset-bottom) + 16px);
+  display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
+.controls button { min-height: 44px; padding: 0 18px; border-radius: 999px; border: 1px solid var(--line);
+  background: var(--panel); color: var(--fg); font: inherit; cursor: pointer; }
+.controls button.on { background: var(--accent); border-color: var(--accent); color: var(--on-accent); font-weight: 600; }
+.controls button:disabled { opacity: 0.45; cursor: default; }
+
+.legend { position: absolute; left: 16px; bottom: calc(env(safe-area-inset-bottom) + 76px);
+  background: var(--panel); padding: 8px 12px; border-radius: 10px; font-size: 12px; display: grid; gap: 4px; }
+.scale { display: flex; align-items: center; gap: 6px; color: var(--muted); }
+.grad { display: inline-block; width: 70px; height: 8px; border-radius: 4px; }
+.sw { display: inline-block; width: 10px; height: 10px; margin-right: 6px; border-radius: 2px; }
+.sw.bld { background: #8a8f96; }
+.attr { color: var(--muted); font-size: 11px; margin-top: 2px; max-width: 240px; }
+
+.card { position: absolute; left: 16px; right: 16px; bottom: calc(env(safe-area-inset-bottom) + 76px);
+  max-width: 380px; margin: 0 auto; background: var(--panel); border: 1px solid var(--line);
+  border-radius: 14px; padding: 14px 16px; backdrop-filter: blur(8px); }
+.card h2 { margin: 0 0 2px; font-size: 16px; }
+.card ul { list-style: none; margin: 10px 0 0; padding: 0; display: grid; gap: 8px; }
+.card li { display: grid; gap: 1px; }
+.card li span, .muted { color: var(--muted); font-size: 12px; margin: 0; }
+.close { position: absolute; top: 8px; right: 10px; width: 32px; height: 32px; border: 0;
+  background: transparent; color: var(--muted); font-size: 22px; cursor: pointer; }
+
+@media (min-width: 720px) {
+  .legend { bottom: 16px; left: 16px; }
+  .controls { justify-content: flex-end; }
+  .card { left: auto; right: 16px; bottom: 72px; margin: 0; }
+}
+@media (max-width: 719px) { .legend { display: none; } .tag { display: none; } }
+
+/* La interfaz va por encima del lienzo del mapa y de las columnas (deck.gl). */
+.bar, .levels, .controls, .legend, .card { z-index: 10; }

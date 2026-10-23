@@ -10,16 +10,3 @@ dist/
 .env.*
 *.pmtiles
 data/raw/
-
-# --- Arnés de desarrollo (local, no se publica) ---
-.claude/
-AGENTS.md
-CLAUDE.md
-CHECKPOINTS.md
-init.sh
-feature_list.json
-features/
-progress/
-docs/
-tools/
-project-spec.md
